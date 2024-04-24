@@ -68,12 +68,6 @@ for i in range(Nt):
 
 
 
-
-
-
-
-
-
 '''def U_lapX(x):
     -np.pi**2*np.sin(np.pi*x)
 def U_lapY(y):
@@ -86,28 +80,6 @@ for i in range(Nt-1):
 
             U[k,j,i+1]= (U[k+1,j,i]- 2*U[k,j,i]-U[k-1,j,i])*gamma + (U[k,j+1,i] -2*U[k,j,i] -U[k,j-1,i])*sigma + U[k,j,i]
 
-
-'''
-writer = animation.FFMpegWriter(fps=15)
-
-fig, ax = plt.subplots(3,3,subplot_kw=dict(projection='3d'))
-#fig, axs = plt.subplots(
-#    3, 3, figsize=(9, 9), layout="constrained", gridspec_kw={"hspace": 0.1})
-plt.show()'''
-'''plt.xlim(0,10)
-plt.ylim(0,10)
-
-X, Y = np.meshgrid(x,y)
-with writer.saving(fig, "exp3d.mp4", 100):
-
-    for tval in np.linspace(0,20,160):
-        print(tval)
-        zval = U(x,y,rlist, tval)
-        ax.set_zlim(-1, 1)
-        ax.plot_surface(xlist,ylist,zval,cmap=cm.viridis)
-
-        writer.grab_frame()
-        plt.cla()'''
 
 
 fig = plt.figure()
@@ -128,28 +100,6 @@ plt.show()
 
 
 
-
-
-
-'''
-
-X, Y = np.meshgrid(x,y)
-ax = plt.figure().add_subplot(projection='3d')
-# Plot the surface.
-
-surf = ax.plot_surface(x, y, U[:,:,i], cmap=cm.coolwarm,
-                       linewidth=0, antialiased=False)
-
-plt.figure(figsize=(20, 20))
-for t_step in range(Nt):
-    plt.subplot(3, 4, t_step + 1)
-    plt.contourf(X, Y, U[:, :, t_step], cmap='coolwarm')
-    plt.colorbar(label='Temperature')
-    plt.title(f'Time = {t[t_step]:.2f}')
-    plt.xlabel('X')
-    plt.ylabel('Y')
-plt.tight_layout()
-plt.show()'''
 
 
 
